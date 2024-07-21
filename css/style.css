@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* 
+common
+*/
+
+/* 共通コンテンツ幅 */
+.wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* 
+header
+*/
+#header {
+  display: flex;
+  justify-content: space-between;
+  height: 11vh;
+}
+
+h1.site-title {
+  width: 10%;
+  margin: 40px 50px;
+}
+
+.hamburger {
+  background-color: red;
+  width: 10%;
+  margin-bottom: 10%;
+  padding: 5%;
+}
+
+/* 
+main
+*/
+#mainvisual {
+  /* 子要素のテキスト用のposition指定 */
+  position: relative;
+}
+
+.mainvisual-inner {
+  width: 70%;
+  background-image: url(../img/mainvisual1.jpg);
+  height: 70vh;
+  /* 背景画像を要素全体に拡大縮小して表示 */
+  background-size: cover;
+  /* 背景画像の表示位置を設定（中央上） */
+  background-position: center top;
+  /* 背景画像の折り返しを無効化 */
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 30%;
+  /* box-shadow insetで内側に影をつける */
+  box-shadow: inset 0px 0px 20px 20px #fff;
+}
+
+#mainvisual .text {
+  position: absolute;
+  font-weight: bold;
+  line-height: 73.6px;
+  font-size: 46px;
+  bottom: 50%;
+  left: -20%;
+  filter: drop-shadow(0px 4px 6px #ffffff);
+}
+
+#mainvisual .btn {
+  position: absolute;
+  font-weight: bold;
+  line-height: 73.6px;
+  font-size: 46px;
+  bottom: 40%;
+  left: -20%;
+  background-color: #FF2A2A;
+}
+
+/* 
+reason
+*/
+
+/* 
+voice
+*/
+
+/* 
+summary
+*/
+
+/* 
+entry
+*/
+
+/* 
+footer
+*/
+
+/* 
+【レスポンシブ】
+*/
