@@ -21,6 +21,12 @@ li {
   list-style: none;
 }
 
+button {
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
 
 /* 
 common
@@ -39,7 +45,7 @@ header
 #header {
   display: flex;
   justify-content: space-between;
-  height: 11vh;
+  height: 8vh;
 }
 
 h1.site-title {
@@ -48,10 +54,101 @@ h1.site-title {
 }
 
 .hamburger {
-  background-color: red;
   width: 10%;
-  margin-bottom: 10%;
-  padding: 5%;
+  
+}
+
+/* 
+ハンバーガーメニュー
+*/
+.hamburger-inner {
+  position: relative;
+  background-color: #FF2A2A;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.hamburger-button {
+  
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  z-index: 100;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  background: #FFFFFF;
+  transition: top 0.24s, transform 0.24s, opacity 0.24s;
+}
+
+.hamburger-bar:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-bar:nth-child(3) {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+/* 
+ハンバーガーバー:クリック後
+*/
+.hamburger-bar.is_active:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.hamburger-bar.is_active:nth-child(2) {
+  transform: translateY(50%, -50%);
+  opacity: 0;
+}
+
+.hamburger-bar.is_active:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: #a0a0a0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.24s;
+  pointer-events: none;
+}
+
+/* 
+ナビゲーションバー:クリック後
+*/
+.nav.is_active {
+  opacity: 1;
+  background-color: #FF2A2A;
+  pointer-events: auto;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 /* 

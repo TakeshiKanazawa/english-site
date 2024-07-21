@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
   <!-- jquery読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/jquery.inview.min"></script>
+  <script src="js/jquery.inview.min.js"></script>
   <!-- js読み込み -->
   <script src="js/main.js"></script>
 </head>
@@ -27,23 +27,27 @@
       <img src="img/logo-r.svg" alt="">
     </h1>
     <!-- ハンバーガーMENU -->
-    <button class="hamburger">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
-    <!--  -->
+    <div class="hamburger">
+      <div class="hamburger-inner">
+        <button class="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
     <!-- ハンバーガーメニューで表示されるナビゲーション -->
-     <!-- <nav class="nav">
+    <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item"><a href=""></a>BBBが選ばれる理由</li>
         <li class="nav-item"><a href=""></a>受講生の声</li>
         <li class="nav-item"><a href=""></a>スクールの概要</li>
         <li class="nav-item"><a href=""></a>無料体験に申し込む</li>
-      </ul> -->
+      </ul>
 
 
-     </nav>
+    </nav>
   </header>
   <main>
     <div id="mainvisual">
