@@ -1,220 +1,194 @@
+/* 基本のスタイル */
 @charset "UTF-8";
 
 html {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 body {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 button {
-  border-color: transparent;
-  background: transparent;
-  cursor: pointer;
+    border-color: transparent;
+    background: transparent;
+    cursor: pointer;
 }
-
-
-/* 
-common
-*/
 
 /* 共通コンテンツ幅 */
 .wrapper {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
 }
 
-/* 
-header
-*/
+/* header */
 #header {
-  display: flex;
-  justify-content: space-between;
-  height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    height: 14vh;
 }
 
 h1.site-title {
-  width: 10%;
-  margin: 40px 50px;
+    width: 10%;
+    height: 10vh;
+    margin: 40px 50px;
+    background-image: url(../img/logo-r.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1.site-title-nav {
+    width: 13%;
+    height: 10vh;
+    background-image: url(../img/logo-w.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+}
+
+/* site-titleを非表示にするクラス */
+.site-title.hidden {
+    display: none;
 }
 
 .hamburger {
-  width: 8%;
-  
+    width: 10%;
 }
 
-/* 
-ハンバーガーメニュー
-*/
+/* ハンバーガーメニュー */
 .hamburger-inner {
-  position: relative;
-  background-color: #FF2A2A;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+    position: relative;
+    background-color: #FF2A2A;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .hamburger-button {
-  width: 50%;
-  height: 35%;
-  position: absolute;
-  top: 30%;
-  right: 25%;
-  z-index: 100;
+    width: 50%;
+    height: 35%;
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    z-index: 100;
 }
 
 .hamburger-bar {
-  display: block;
-  width: 100%;
-  height: 7%;
-  position: absolute;
-  left: 0;
-  background: #FFFFFF;
-  transition: top 0.24s, transform 0.24s, opacity 0.24s;
+    display: block;
+    width: 100%;
+    height: 7%;
+    position: absolute;
+    left: 0;
+    background: #FFFFFF;
+    transition: top 0.24s, transform 0.24s, opacity 0.24s;
 }
 
 .hamburger-bar:nth-child(1) {
-  top: 0;
+    top: 0;
 }
 
 .hamburger-bar:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger-bar:nth-child(3) {
-  top: 100%;
-  transform: translateY(-100%);
+    top: 100%;
+    transform: translateY(-100%);
 }
 
-/* 
-ハンバーガーバー:クリック後
-*/
+/* バツの位置を修正 */
 .hamburger-bar.is_active:nth-child(1) {
-  top: 50%;
-  transform: translateY(-50%) rotate(135deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg); /* 45度回転 */
 }
 
 .hamburger-bar.is_active:nth-child(2) {
-  transform: translateY(50%, -50%);
-  opacity: 0;
+    opacity: 0; /* 中央のバーを消す */
 }
 
 .hamburger-bar.is_active:nth-child(3) {
-  top: 50%;
-  transform: translateY(-50%) rotate(-135deg);
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg); /* -45度回転 */
 }
 
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 99;
-  background: #a0a0a0;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.24s;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background: #a0a0a0;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.24s;
+    pointer-events: none;
 }
 
-/* 
-ナビゲーションバー:クリック後
-*/
 .nav.is_active {
-  opacity: 1;
-  background-color: #FF2A2A;
-  pointer-events: auto;
-  color: #FFFFFF;
+    opacity: 1;
+    background-color: #FF2A2A;
+    color: #FFFFFF;
 }
 
 .nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 20%;
 }
 
-/* 
-main
-*/
 #mainvisual {
-  /* 子要素のテキスト用のposition指定 */
-  position: relative;
+    position: relative;
 }
 
 .mainvisual-inner {
-  width: 70%;
-  background-image: url(../img/mainvisual1.jpg);
-  height: 70vh;
-  /* 背景画像を要素全体に拡大縮小して表示 */
-  background-size: cover;
-  /* 背景画像の表示位置を設定（中央上） */
-  background-position: center top;
-  /* 背景画像の折り返しを無効化 */
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 30%;
-  /* box-shadow insetで内側に影をつける */
-  box-shadow: inset 0px 0px 20px 20px #fff;
+    width: 70%;
+    background-image: url(../img/mainvisual1.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 30%;
+    box-shadow: inset 0px 0px 20px 20px #fff;
 }
 
 #mainvisual .text {
-  position: absolute;
-  font-weight: bold;
-  line-height: 73.6px;
-  font-size: 46px;
-  bottom: 50%;
-  left: -20%;
-  filter: drop-shadow(0px 4px 6px #ffffff);
+    position: absolute;
+    font-weight: bold;
+    line-height: 73.6px;
+    font-size: 46px;
+    bottom: 50%;
+    left: -20%;
+    filter: drop-shadow(0px 4px 6px #ffffff);
 }
 
 #mainvisual .btn {
-  position: absolute;
-  font-weight: bold;
-  line-height: 73.6px;
-  font-size: 46px;
-  bottom: 40%;
-  left: -20%;
-  background-color: #FF2A2A;
+    position: absolute;
+    font-weight: bold;
+    line-height: 73.6px;
+    font-size: 46px;
+    bottom: 40%;
+    left: -20%;
+    background-color: #FF2A2A;
 }
 
-/* 
-reason
-*/
-
-/* 
-voice
-*/
-
-/* 
-summary
-*/
-
-/* 
-entry
-*/
-
-/* 
-footer
-*/
-
-/* 
-【レスポンシブ】
-*/
+/* レスポンシブ */
+@media screen and (max-width: 900px) {}
