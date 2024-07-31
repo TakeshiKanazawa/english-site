@@ -52,12 +52,13 @@ h1.site-title {
 }
 
 h1.site-title-nav {
-    width: 13%;
+    width: 20%;
     height: 10vh;
     background-image: url(../img/logo-w.svg);
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 5%;
+    margin-left: -30%;
 }
 
 /* site-titleを非表示にするクラス */
@@ -114,16 +115,19 @@ h1.site-title-nav {
 /* バツの位置を修正 */
 .hamburger-bar.is_active:nth-child(1) {
     top: 50%;
-    transform: translateY(-50%) rotate(45deg); /* 45度回転 */
+    transform: translateY(-50%) rotate(45deg);
+    /* 45度回転 */
 }
 
 .hamburger-bar.is_active:nth-child(2) {
-    opacity: 0; /* 中央のバーを消す */
+    opacity: 0;
+    /* 中央のバーを消す */
 }
 
 .hamburger-bar.is_active:nth-child(3) {
     top: 50%;
-    transform: translateY(-50%) rotate(-45deg); /* -45度回転 */
+    transform: translateY(-50%) rotate(-45deg);
+    /* -45度回転 */
 }
 
 .nav {
@@ -148,10 +152,28 @@ h1.site-title-nav {
 }
 
 .nav-list {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    margin: 20%;
+    gap: 4%;
+    margin-top: 22%;
+    font-size: 2.5rem;
+}
+
+li.nav-item:last-child {
+    margin-top: 20%;
+    background-position: center top;
+    display: inline-block;
+    padding: 10%;
+    /* ボタンの背景色 */
+    color: #ffffff;
+    /* 文字の色 */
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    /* ボタンの境界線色 */
+    border-style: solid;
+
+
 }
 
 #mainvisual {
