@@ -158,11 +158,14 @@ h1.site-title-nav {
     gap: 4%;
     margin-top: 22%;
     font-size: 2.5rem;
+    position: relative;
 }
 
 li.nav-item:last-child {
-    margin-top: 20%;
-    background-position: center top;
+    position: absolute;
+    width: 170%;
+    top:60%;
+    left: -30%;
     display: inline-block;
     padding: 10%;
     /* ボタンの背景色 */
@@ -178,6 +181,7 @@ li.nav-item:last-child {
 
 #mainvisual {
     position: relative;
+    height: 85vh;
 }
 
 .mainvisual-inner {
@@ -192,7 +196,7 @@ li.nav-item:last-child {
     box-shadow: inset 0px 0px 20px 20px #fff;
 }
 
-#mainvisual .text {
+#mainvisual .main-text {
     position: absolute;
     font-weight: bold;
     line-height: 73.6px;
@@ -202,15 +206,28 @@ li.nav-item:last-child {
     filter: drop-shadow(0px 4px 6px #ffffff);
 }
 
-#mainvisual .btn {
+#mainvisual .linkbtn-title {
+    display: inline-block;
+    border-radius: 10px;
     position: absolute;
     font-weight: bold;
-    line-height: 73.6px;
-    font-size: 46px;
+    
+    font-size: 3.5rem;
     bottom: 40%;
     left: -20%;
     background-color: #FF2A2A;
 }
+
+.underline {
+    width: 30%;
+    height: 1vh;
+    margin: 0 auto;
+    background: black;
+  }
+
+  .group {
+    text-align: center;
+  }
 
 /* レスポンシブ */
 @media screen and (max-width: 900px) {}
