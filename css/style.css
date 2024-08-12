@@ -175,54 +175,154 @@ li.nav-item:last-child {
     border: 1px solid #ffffff;
     /* ボタンの境界線色 */
     border-style: solid;
-
-
 }
+
+.section__title {
+    margin-bottom: 1%;
+}
+
+/* メインビジュアル */
 
 #mainvisual {
     position: relative;
     height: 85vh;
 }
-
-.mainvisual-inner {
-    width: 70%;
-    background-image: url(../img/mainvisual1.jpg);
-    height: 70vh;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+.text-group {
     position: absolute;
-    left: 30%;
+    top: 280px;
+    left:10%;
+    z-index: 10;
+}
+
+#mainvisual .text {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    z-index: 10;
+}
+
+#mainvisual .text .title{
+    font-size: 2.875rem;
+    font-weight: bold;
+    margin-bottom: 6%;
+    text-shadow: 0 4px 6px #fff;
+}
+
+#mainvisual .btn {
+    background-color: #FF2A2A;
+    border-bottom: 6px solid #9a0413;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    display: block;
+    padding: 4% 19%;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+}
+
+#mainvisual .btn::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-top: solid 4px #FFFFFF;
+    border-right: solid 4px #FFFFFF;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: -84%;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+/* 画像のフェード */
+#mainvisual .fade li {
+    width: 75%;
+    position: absolute;
+    top:0;
+    right: 0;
+    /* 最初は3枚の画像を非表示にしておく */
+    opacity: 0;
+    /* アニメーションを実行
+    fade:下で定義している「@keyframes fade」を実行
+    15s:「@keyframes fade」の処理を15秒かけて実行
+    inifinite:アニメーションの処理を無限に繰り返す
+    */
+    animation: fade 15s infinite;
+}
+
+/* 1枚目の画像のアニメーション実行タイミングを設定 
+    「animatation-delay: 0s;」ですぐに実行
+    */
+#mainvisual .fade li:nth-child(1){
+    animation-delay: 0s;
+}
+
+/* 2枚目の画像のアニメーション実行タイミングを設定 
+    「animatation-delay: 5s;」ですぐに実行
+    */
+#mainvisual .fade li:nth-child(2){
+    animation-delay: 5s;
+}
+
+/* 3枚目の画像のアニメーション実行タイミングを設定 
+    「animatation-delay: 10s;」ですぐに実行
+    */
+#mainvisual .fade li:nth-child(3){
+        animation-delay: 10s;
+}
+
+#mainvisual .fade li img {
+        width: 100%;
+        height: 720px;
+        object-fit: cover;
+}
+
+/* 画像のぼかし */
+#mainvisual .fade li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     box-shadow: inset 0px 0px 20px 20px #fff;
 }
 
-#mainvisual .main-text {
-    position: absolute;
-    font-weight: bold;
-    line-height: 73.6px;
-    font-size: 46px;
-    bottom: 50%;
-    left: -20%;
-    filter: drop-shadow(0px 4px 6px #ffffff);
-}
-
-#mainvisual .linkbtn-title {
-    display: inline-block;
-    border-radius: 10px;
-    position: absolute;
-    font-weight: bold;
-    
-    font-size: 3.5rem;
-    bottom: 40%;
-    left: -20%;
-    background-color: #FF2A2A;
+/* アニメーション処理 
+・15秒かけて実行
+・0%の「opacity:0」で非表示の状態からスタートし
+15%になるまで少しづつ画像を表示させる
+・30%の時点までは画像を表示させたままの状態を維持し
+45%の時点に向けて画像を非表示(フェードアウト)する
+そこから100%まで非表示の状態を維持する
+*/
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .underline {
-    width: 30%;
-    height: 1vh;
+    width: 6%;
+    height: 0.3vh;
     margin: 0 auto;
-    background: black;
+    background: #333333;
   }
 
   .group {
