@@ -67,6 +67,7 @@ h1.site-title-nav {
 }
 
 .hamburger {
+    height: 12vh;
     width: 10%;
 }
 
@@ -185,7 +186,7 @@ li.nav-item:last-child {
 
 #mainvisual {
     position: relative;
-    height: 90vh;
+    height: 120vh;
 }
 
 .text-group {
@@ -241,7 +242,8 @@ li.nav-item:last-child {
 
 /* 画像のフェード */
 #mainvisual .fade li {
-    width: 75%;
+    padding: 1%;
+    width: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -278,7 +280,6 @@ li.nav-item:last-child {
 
 #mainvisual .fade li img {
     width: 100%;
-    height: 720px;
     object-fit: cover;
 }
 
@@ -415,6 +416,7 @@ li.nav-item:last-child {
 }
 
 @keyframes slide-right {
+
     /* 最初は「translateX(150%)」で右側に隠しておく
     100%(0.5秒)かけて要素を表示させながら表示位置へ移動させる
     */
@@ -429,4 +431,78 @@ li.nav-item:last-child {
 }
 
 /* レスポンシブ */
-    @media screen and (max-width: 900px) {}
+@media screen and (max-width: 900px) {
+
+    /*メインビジュアル  */
+    #mainvisual {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 37vh;
+        margin-bottom: 12%;
+
+    }
+
+    #mainvisual .text {
+        position: unset;
+    }
+
+    #mainvisual .fade li img {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+    }
+
+    /* ハンバーガーMenu */
+    .hamburger {
+        width: 13%;
+        height: 7vh;
+    }
+
+    h1.site-title {
+        width: 15%;
+    }
+
+    #mainvisual .text .title {
+        font-size: 2rem;
+        padding: 0 1%;
+    }
+
+    #mainvisual .btn {
+        padding: 2% 19%;
+    }
+
+    #reason .inview-slide-left {
+        width: 95%;
+    }
+
+    #reason .inview-slide-right {
+        width: 95%;
+    }
+
+    @keyframes slide-right {
+
+        /* 最初は「translateX(150%)」で右側に隠しておく
+        100%(0.5秒)かけて要素を表示させながら表示位置へ移動させる
+        */
+        0% {
+            transform: translateX(150%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(5%);
+        }
+    }
+
+    .slide-left {
+        justify-content: left;
+    }
+
+    .slide-right {
+        justify-content: right;
+    }
+
+    #reason .bg {
+        padding: 5% 0;
+    }
+}
