@@ -179,6 +179,7 @@ li.nav-item:last-child {
 }
 
 .section__title {
+    font-size: 2.5rem;
     margin-bottom: 1%;
 }
 
@@ -427,6 +428,89 @@ li.nav-item:last-child {
     100% {
         opacity: 1;
         transform: translateX(100%);
+    }
+}
+
+/* voice */
+
+/* 生徒 */
+.student {
+    margin: 0 4%;
+}
+
+#voice {
+    margin-bottom: 20%;
+}
+
+#voice .item-left,
+#voice .item-right {
+    /* 最初は非表示にしておく */
+    opacity: 0;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10%;
+}
+
+/* 受講生のアイコン */
+#voice .student img {
+    border-radius: 50%;
+    background-color: #CCCCCC;
+}
+
+/* 受講生の紹介テキスト */
+p.name {
+    text-align: center;
+}
+
+/*吹き出し文字  */
+.balloon-text {
+    font-size: 1.3rem;
+    margin: auto;
+    background-color: #E9F1FB;
+    padding: 3%;
+    border-radius: 20px;
+    /* 三角の吹き出し用 */
+    position: relative;
+}
+
+/* 生徒左 三角吹き出し */
+#voice .item-left .balloon-text::before {
+    /* 擬似要素の表示のため空のコンテンツ設定 */
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 0;
+    margin-left: -30px;
+    border: 15px solid transparent;
+    border-right: 15px solid #E9F1FB;
+}
+
+#voice .item-right .balloon-text::before {
+    /* 擬似要素の表示のため空のコンテンツ設定 */
+    content: "";
+    position: absolute;
+    top: 60%;
+    right: 0;
+    margin-right: -30px;
+    border: 15px solid transparent;
+    border-left: 15px solid #E9F1FB;
+}
+
+/* 吹き出し animataion */
+
+#voice .balloon {
+    animation: balloon 0.5s ease-out 0s 1 forwards;
+}
+
+/* animation処理 */
+@keyframes balloon {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 

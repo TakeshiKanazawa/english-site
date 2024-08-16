@@ -9,7 +9,7 @@ $(function () {
     $(this).find(".hamburger-bar").toggleClass("is_active");
     nav.toggleClass("is_active");
 
-  })
+  });
   // InView
   // BBCが選ばれる理由(スライド左)
   // 要素が表示領域に入った時にクラスを要素に追加する
@@ -28,6 +28,12 @@ $(function () {
       // 要素が表示されたらslide-leftクラスを追加
       // stop()はアニメーションの競合や意図しない動作を防ぐ為
       $(this).stop().addClass('slide-right');
-  });
-  
-})
+    });
+  // 受講生の声(吹き出し)
+      $('.inview-balloon').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
+    if (isInView)
+      // 要素が表示されたらslide-leftクラスを追加
+      // stop()はアニメーションの競合や意図しない動作を防ぐ為
+      $(this).stop().addClass('balloon');
+    });
+});
