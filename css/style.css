@@ -523,7 +523,6 @@ p.name {
     animation: fall 10s infinite linear;
     padding: 60px 0;
     margin-bottom: 120px;
-    height: 40vh;
 }
 
 /* fallにアニメーション実装 */
@@ -554,7 +553,7 @@ p.name {
 }
 
 .flex-item {
-    height: 12vh;
+    height: 23vh;
     background-color: white;
     /* 2列のアイテムを作成尾 */
     flex: 0 1 calc(50% - 20px);
@@ -686,5 +685,13 @@ p.text {
         top: 100%;
         border: 15px solid transparent;
         border-top: 15px solid #e9f1fb;
+    }
+
+    /* スクールの概要 */
+
+    .flex-list {
+        
+        padding: 5%;
+        flex-direction: column;
     }
 }
