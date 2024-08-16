@@ -515,6 +515,67 @@ p.name {
     }
 }
 
+/* スクールの概要 背景animation */
+#summary {
+    background: url(../img/bg.gif)repeat;
+    /* animationの適用 */
+    /* アニメーションfallに対して10秒間かけて一定の速度のアニメーションを無限に繰り返す */
+    animation: fall 10s infinite linear;
+    padding: 60px 0;
+    margin-bottom: 120px;
+    height: 40vh;
+}
+
+/* fallにアニメーション実装 */
+@keyframes fall {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        /* 画像を左斜め上に700px移動させるアニメーション */
+        background-position: -700px 700px;
+    }
+}
+
+/* スクールの概要 コンテンツ */
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.flex-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+}
+
+.flex-item {
+    height: 12vh;
+    background-color: white;
+    /* 2列のアイテムを作成尾 */
+    flex: 0 1 calc(50% - 20px);
+    padding: 4% 8.5%;
+    border-radius: 10px;
+    text-align: center;
+
+}
+h3.title-ja {
+    font-size: 1.5rem;
+}
+p.title-en {
+    font-size: 1rem;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+p.text {
+    text-align: left;
+}
+
 /* レスポンシブ */
 @media screen and (max-width: 900px) {
 
