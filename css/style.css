@@ -497,7 +497,6 @@ p.name {
 }
 
 /* 吹き出し animataion */
-
 #voice .balloon {
     animation: balloon 0.5s ease-out 0s 1 forwards;
 }
@@ -523,6 +522,28 @@ p.name {
     animation: fall 10s infinite linear;
     padding: 60px 0;
     margin-bottom: 120px;
+}
+
+/* entryセクション */
+#entry {
+    text-align: center;
+    margin-bottom: 12%;
+}
+
+#entry .text {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#entry .btn {
+    background-color: #FF2A2A;
+    border-radius: 60px;
+    color: #fff;
+    font-size: 1.5rem;
+    display: block;
+    padding: 1% 19%;
+    text-align: center;
+    position: relative;
 }
 
 /* fallにアニメーション実装 */
@@ -562,9 +583,11 @@ p.name {
     text-align: center;
 
 }
+
 h3.title-ja {
     font-size: 1.5rem;
 }
+
 p.title-en {
     font-size: 1rem;
     margin-bottom: 5%;
@@ -573,6 +596,44 @@ p.title-en {
 
 p.text {
     text-align: left;
+    margin-bottom: 5%;
+}
+
+/* 無料体験に申し込むセクション */
+#footer {
+    background-color: #E8E8E8;
+    text-align: center;
+    padding: 2% 18%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.footer-column {
+    /* 各列の幅を調整 */
+    width: 22%;
+    padding: 5% 0%;
+    text-align: left;
+}
+
+.footer-column h3 {
+    margin-bottom: 5%;
+    margin-left: -7%;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#footer a {
+    color: #333333;
+    font-size: 1rem;
+
+}
+
+.footer-bottom {
+    padding-bottom: 2%;
 }
 
 /* レスポンシブ */
@@ -688,10 +749,23 @@ p.text {
     }
 
     /* スクールの概要 */
-
     .flex-list {
-        
         padding: 5%;
         flex-direction: column;
     }
+
+    /* footer のコンテンツ */
+    .footer-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-column {
+        /* 2列レイアウトにするために幅を50%に */
+        width: calc(50%);
+    }
+
+
+    
 }
