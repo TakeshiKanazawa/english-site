@@ -508,6 +508,7 @@ p.name {
         transform: scale(0.1);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -588,5 +589,41 @@ p.name {
 
     #reason .bg {
         padding: 5% 0;
+    }
+
+    /* 受講生の声 */
+    #voice .item-left {
+        flex-direction: column-reverse;
+    }
+
+    #voice .item-right {
+        flex-direction: column;
+    }
+
+    /* 生徒アイコン画像 */
+    .student {
+        /* 中央に寄せる */
+        margin: 0 auto;
+    }
+
+    /* 受講生の声(吹き出し) */
+    .balloon-text {
+        margin-bottom: 10%;
+    }
+
+    /* 受講生の声(吹き出し:左) */
+    #voice .item-left .balloon-text::before {
+        margin-left: calc(50% - 15px);
+        top: 100%;
+        border: 15px solid transparent;
+        border-top: 15px solid #e9f1fb;
+    }
+
+    /* 受講生の声(吹き出し:右) */
+    #voice .item-right .balloon-text::before {
+        margin-right: calc(50% - 15px);
+        top: 100%;
+        border: 15px solid transparent;
+        border-top: 15px solid #e9f1fb;
     }
 }
